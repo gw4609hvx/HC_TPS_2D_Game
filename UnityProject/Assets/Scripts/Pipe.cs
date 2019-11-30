@@ -12,7 +12,7 @@ public class Pipe : Ground
     //在攝影機畫面外的時候會執行一次
     private void OnBecameInvisible()
     {
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.5f);
     }
 
     //在攝影機畫面內的時候會執行一次

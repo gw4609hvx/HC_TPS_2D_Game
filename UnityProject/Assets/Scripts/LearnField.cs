@@ -16,8 +16,8 @@ public class LearnField : MonoBehaviour
     [Header("角色等級"), Range(1, 9999)]
     public int lv = 999;
     [Tooltip("角色的移動速度，不要調太高，角色會飛走。")]
-    [Range(0.1f, 99.9f)]
-    public float speed = 1.5f;
+    [Range(0.1f, 20f)]
+    public float speed = 1.0f;
     public string prop1 = "紅色藥水";
     public bool mission = true;
 }

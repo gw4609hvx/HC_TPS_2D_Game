@@ -3,7 +3,7 @@
 public class Bird : MonoBehaviour
 {
     [Header("跳躍高度"), Range(10, 2000)]
-    public int jump = 100;
+    public int jump = 50;
     [Header("旋轉角度"), Range(0, 100)]
     public float angle = 10;
     [Header("是否死亡"), Tooltip("用來判斷角色是否死亡，true 死亡，false 還沒死亡")]
@@ -82,7 +82,7 @@ public class Bird : MonoBehaviour
     private void OnTriggerExit2D(Collider2D hit)
     {
         //如果 碰到.物件名稱 為上 或者 下 - 死亡
-        if (hit.gameObject.name == "水管 - 上" || hit.gameObject.name == "水管- 下")
+        if (hit.gameObject.name == "水管 - 上" || hit.gameObject.name == "水管 - 下")
             {
                 aud.PlayOneShot(soundHit, 1.5f);
                 Dead();
@@ -92,7 +92,7 @@ public class Bird : MonoBehaviour
     //事件:觸發結束 - 物件離開觸發區域執行一次
     private void OnTriggerEnter2D(Collider2D hit)
     {
-        if(hit.name == "加分")
+        if(hit.name == "加分" && !dead)
             {
                 aud.PlayOneShot(soundAdd, 1.5f);
                 gm.AddScore();
